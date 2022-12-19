@@ -5,6 +5,9 @@
     <title></title>
   </head>
   <body>
-    <h2>I'm working</h2>
+    <h2>Your task list:</h2>
+    {%for task in all_items%}
+      <p>{{task}}</p>
+    {%endfor%}
   </body>
 </html>
