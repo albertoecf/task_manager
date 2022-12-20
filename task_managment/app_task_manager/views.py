@@ -21,3 +21,10 @@ def home(request):
     else:
         all_items = taskModel.objects.all()
         return render(request, 'index.html', {'all_items': all_items})
+
+def delete(request, list_id):
+
+    item = taskModel.objects.get(pk=list_id)
+    item.delete()
+    messages.success(request, ('Item deleted'))
+    return redirect('home_path')

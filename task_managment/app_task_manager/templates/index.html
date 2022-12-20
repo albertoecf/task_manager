@@ -6,8 +6,8 @@
   </head>
   <body>
     <h2>Your task list:</h2>
-    {%for task in all_items%}
-      <p>{{task}}</p>
+    {%for item in all_items%}
+      <p>{{item}}</p><a href="{% url 'delete' item.id%}">Delete Me</a>
     {%endfor%}
 
     <form action="{% url 'home_path' %}" method="post">
