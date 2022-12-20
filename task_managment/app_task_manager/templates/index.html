@@ -9,5 +9,12 @@
     {%for task in all_items%}
       <p>{{task}}</p>
     {%endfor%}
+
+    <form action="{% url 'home_path' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="task_name" placeholder="Enter task"><br>
+        <input type="text" name="priority_level" placeholder="Enter priority"><br>
+        <input type="submit" value="Submit">
+    </form>
   </body>
 </html>
