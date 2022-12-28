@@ -19,5 +19,6 @@ from app_task_manager import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app_task_manager.urls')),
+    path('', include('app_task_manager.urls', namespace='app_task_manager')),
+    path('accounts/', include('accounts.urls'))
 ]

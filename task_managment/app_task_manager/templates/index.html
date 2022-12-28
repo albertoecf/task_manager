@@ -23,13 +23,13 @@
       <td>{{item.task_name}}</td>
       <td>{{item.priority_level}}</td>
       <td>{{item.completed}}</td>
-      <td><a href="{% url 'delete' item.id%}">Delete Me</a></td>
+      <td><a href="{% url 'app_task_manager:delete' item.id%}">Delete Me</a></td>
     </tr>
     <p></p>
     {%endfor%}
   </table><br>
 
-  <form action="{% url 'home_path' %}" method="post">
+  <form action="{% url 'app_task_manager:home_path' %}" method="post">
     {% csrf_token %}
     <div class="mb-3">
       <label for="task_name" class="form-label">Task</label><br>
