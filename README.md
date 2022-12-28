@@ -1,5 +1,6 @@
-Quick Django Project
-Few people miss important things during their day to day rutine. 
+Quick Django Project.
+
+Context : Some people miss important things during their day to day rutine. 
 
 We'll aim to build an easy to use "To do" list. Features : Add task + priority , Delete task
 
