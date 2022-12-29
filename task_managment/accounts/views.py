@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 
 def home_login(request):
     return render(request, 'loginpage.html')
 
+@login_required
 def welcomeback(request):
     return render(request, 'welcomeback.html')
 # Create your views here.
