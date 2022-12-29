@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
 
 def home_login(request):
     return render(request, 'loginpage.html')
@@ -6,3 +7,13 @@ def home_login(request):
 def welcomeback(request):
     return render(request, 'welcomeback.html')
 # Create your views here.
+
+def register(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('accounts:login_path')
+    else :
+        form = UserCreationForm()
+    return render(request, 'registration/register.html', {'form':form})
